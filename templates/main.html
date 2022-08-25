@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <title>Feedback Page</title>
+ 
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="/">Music Survey</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="/">Home</a>
+              <a class="nav-item nav-link" href="/about">About</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="center">
+      <form action="/save" method = "POST">
+         <!-- Pyt1 -->
+        <p><b>1. Płeć </b>
+            <p>
+              <input type="radio" name="answer1" value="kobieta"/> Kobieta &nbsp 
+              <input type="radio" name="answer1" value="mezczyzna"/> Mężczyzna &nbsp  
+              <input type="radio" name="answer1" value="NOT"/> Nie chcę podawać  
+            </p>
+        </p>
+        <!-- Pyt2 -->
+        <p><b>2. Wiek </b>
+          <p><input type="radio" name="answer2" value="mniej niz 15"/> mniej niż 15 lat</p> 
+          <p><input type="radio" name="answer2" value="15-20"/> 15-20 lat</p>  
+          <p><input type="radio" name="answer2" value="20-30"/> 20-30 lat</p> 
+          <p><input type="radio" name="answer2" value="30-40"/> 30-40 lat</p>   
+          <p><input type="radio" name="answer2" value="40-50"/> 40-50 lat</p> 
+          <p><input type="radio" name="answer2" value="powyzej 50"/> powyżej 50 lat</p>
+        </p>
+        <!-- Pyt3 -->
+        <p><b>3. Wykształcenie</b>
+          <p><input type="radio" name="answer3" value="podstawowe"/> podstawowe &nbsp
+            <input type="radio" name="answer3" value="srednie"/> średnie &nbsp
+            <input type="radio" name="answer3" value="zawodowe"/> zawodowe &nbsp
+            <input type="radio" name="answer3" value="wyzsze"/> wyższe
+          </p>
+        </p>
+        <!-- Pyt4 -->
+        <p><b>4. Wybierz stwierdzenie, które najlepiej Cię opisuje:</b> 
+          <p><input type="radio" name="answer4" value="ucze sie"/> uczę się</p>
+          <p><input type="radio" name="answer4" value="studiuje || studiuje"/> studiuję lub/i pracuję </p>  
+          <p><input type="radio" name="answer4" value="jestem emerytem"/> jestem emerytem</p> 
+          <p><input type="radio" name="answer4" value="jestem bezrobotny"/> jestem bezrobotny</p>
+        </p>
+        <!-- Pyt5 -->
+        <p><label for=""><b>5. Wybierz stwierdzenie, które najlepiej Cię opisuje: </b></label><br>
+          <input type="checkbox" name="answer5" value='zajmuję się tworzeniem muzyki'>&nbspzajmuję się tworzeniem muzyki<br>
+          <input type="checkbox" name="answer5" value='obrabiam dźwięk'>&nbspobrabiam dźwięk<br>
+          <input type="checkbox" name="answer5" value='prowadzę prace badawcze związane z dźwiękiem'>&nbspprowadzę prace badawcze związane z dźwiękiem<br>
+          <input type="checkbox" name="answer5" value='nie jestem związany z muzyką zawodowo'>&nbspnie jestem związany z muzyką zawodowo<br>
+        </p>
+        <!-- Pyt6 -->
+        <p><b>6. Kraj pochodzenia</b> 
+          <p>
+            <select name="answer6" >
+              <option value="Polska">Polska</option>
+              <option value="Anglia">Anglia</option>
+              <option value="Chiny">Chiny</option>
+              <option value="Dania">Dania</option>
+              <option value="Dominikana">Dominikana</option>
+              <option value="Ekwador">Ekwador</option>
+              <option value="Francja">Francja</option>
+              <option value="Filipiny">Filipiny</option>
+              <option value="Grecja">Grecja</option>
+              <option value="Gwatemala">Gwatemala</option>
+              <option value="Haiti">Haiti</option>
+              <option value="Holandia">Holandia</option>
+              <option value="Honduras">Honduras</option>
+              <option value="HongKong">HongKong</option>
+              <option value="Indie">Indie</option>
+              <option value="Iran">Iran</option>
+              <option value="Irlandia">Irlandia</option>
+              <option value="Jamajka">Jamajka</option>
+              <option value="Japonia">Japonia</option>
+              <option value="Kambodża">Kambodża</option>
+              <option value="Kanada">Kanada</option>
+              <option value="Kolumbia">Kolumbia</option>
+              <option value="Kuba">Kuba</option>
+              <option value="Meksyk">Meksyk</option>
+              <option value="Niemcy">Niemcy</option>
+              <option value="Norwegia">Norwegia</option>
+              <option value="Peru">Peru</option>
+              <option value="Portugalia">Portugalia</option>
+              <option value="Puerto-Rico">Puerto-Rico</option>
+              <option value="Salwador">Salwador</option>
+              <option value="Stany Zjednoczone">Stany Zjednoczone</option>
+              <option value="Szkocja">Szkocja</option>
+              <option value="Szwecja">Szwecja</option>
+              <option value="Tajlandia">Tajlandia</option>     
+              <option value="Węgry">Węgry</option>
+              <option value="Włochy">Włochy</option>
+              <option value="Wietnam">Wietnam</option>
+            </select>
+          </p>
+        </p>
+        <!-- 
+        <select id="native-country" name="native-country">
+          <option value="0">Cambodia</option>
+          <option value="1">Canada</option>
+          <option value="2">China</option>
+          <option value="3">Columbia</option>
+          <option value="4">Cuba</option>
+          <option value="5">Dominican Republic</option>
+          <option value="6">Ecuador</option>
+          <option value="7">El Salvadorr</option>
+          <option value="8">England</option>
+          <option value="9">France</option>
+          <option value="10">Germany</option>
+          <option value="11">Greece</option>
+          <option value="12">Guatemala</option>
+          <option value="13">Haiti</option>
+          <option value="14">Netherlands</option>
+          <option value="15">Honduras</option>
+          <option value="16">HongKong</option>
+          <option value="17">Hungary</option>
+          <option value="18">India</option>
+          <option value="19">Iran</option>
+          <option value="20">Ireland</option>
+          <option value="21">Italy</option>
+          <option value="22">Jamaica</option>
+          <option value="23">Japan</option>
+          <option value="24">Laos</option>
+          <option value="25">Mexico</option>
+          <option value="26">Nicaragua</option>
+          <option value="27">Outlying-US(Guam-USVI-etc)</option>
+          <option value="28">Peru</option>
+          <option value="29">Philippines</option>
+          <option value="30">Poland</option>
+          <option value="11">Portugal</option>
+          <option value="32">Puerto-Rico</option>
+          <option value="33">Scotland</option>
+          <option value="34">South</option>
+          <option value="35">Taiwan</option>
+          <option value="36">Thailand</option>
+          <option value="37">Trinadad&Tobago</option>
+          <option value="38">United States</option>
+          <option value="39">Vietnam</option>
+          <option value="40">Yugoslavia</option>
+        </select>
+         -->
+        <!-- Pyt7 -->
+        <p><b>7. Wielkość miejsca zamieszkania</b> 
+          <p><input type="radio" name="answer7" value="ponizej 1 tys."/> poniżej 1 tys. mieszkańców  </p>
+          <p><input type="radio" name="answer7" value="1-20 tys."/> 1-20 tys. mieszkańców  </p>
+          <p><input type="radio" name="answer7" value="20-100tys."/> 20-100 tys. mieszkańców </p> 
+          <p><input type="radio" name="answer7" value="powyzej 100tys."/> powyżej 100 tys. mieszkańców </p>
+        </p>
+        <!-- Pyt8 -->
+        <p><b>8. Czy twój nastrój wpływa na wybór słuchanych utworów? </b>
+          <p>
+            <input type="radio" name="answer8" value="tak, wpływa"/> tak &nbsp 
+            <input type="radio" name="answer8" value="nie wpływa"/> nie 
+          </p>
+        </p>
+        <!-- Pyt9 -->
+        <p><b>9. Czy grasz na jakimś instrumencie? Jeśli tak, to jakim?</b> 
+          <p><input type = "text" name = "answer9" /></p>
+        </p>
+        <!-- Pyt10 -->
+        <p><b>10. Jakich gatunków najczęściej słuchasz?</b>  
+          <p><select name="answer10" >
+             <option value="Pop">Pop</option>
+             <option value="Jazz">Jazz</option>
+             <option value="R&B">R&B</option>
+             <option value="Rock">Rock</option>
+             <option value="Metal">Metal</option>
+             <option value="Folk">Folk</option>
+             <option value="Muzyka alternatywna">Muzyka alternatywna</option>
+             <option value="Disco polo">Disco polo</option>
+             <option value="Hip Hop/Rap">Hip Hop/Rap</option>
+             <option value="Reggae">Reggae</option>
+             <option value="R&B">R&B</option>
+             <option value="Muzyka klasyczna">Muzyka klasyczna</option>
+             <option value="Muzyka elektroniczna">Muzyka elektroniczna</option>
+             <option value="Inny">Inny</option>
+             </select>
+          </p>
+        </p>
+      <!-- Pyt11 -->
+      <p><b>11. Jak długo słuchasz muzyki w sposób aktywny dziennie (słuchanie muzyki jest dominującą czynnością, nie tłem)? </b>
+        <p><input type="radio" name="answer11" value="mniej niż 30 min"/>mniej niż 30 min </p>
+        <p><input type="radio" name="answer11" value="między 0,5 - 1 godziny"/>między 0,5 - 1 godziny </p> 
+        <p><input type="radio" name="answer11" value="między 1 - 2 godziny"/>między 1 - 2 godziny </p> 
+        <p><input type="radio" name="answer11" value="między 2 - 3 godziny"/>między 2 - 3 godziny </p>
+        <p><input type="radio" name="answer11" value="powyzej 3 godzin"/>powyżej 3 godzin </p>
+      </p>
+      <!-- Pyt12 -->
+      <p><b>12. Jak długo słuchasz muzyki w pasywny dziennie (muzyka jest dodatkiem, tłem dla innych czynności)?</b> 
+        <p><input type="radio" name="answer12" value="mniej niż 30 min"/>mniej niż 30 min </p> 
+        <p><input type="radio" name="answer12" value="między 0,5 - 1 godziny"/>między 0,5 - 1 godziny </p> 
+        <p><input type="radio" name="answer12" value="między 1 - 2 godziny"/>między 1 - 2 godziny </p>
+        <p><input type="radio" name="answer12" value="między 2 - 3 godziny"/>między 2 - 3 godziny </p>
+        <p><input type="radio" name="answer12" value="powyzej 3 godzin"/>powyżej 3 godzin </p>
+      </p>
+      <!-- Pyt13 -->
+      <p><b>13. Czy zdarza Ci się słuchać muzyki w celu odcięcia się od otoczenia?  </b>
+        <p>
+          <input type="radio" name="answer13" value="tak, odcinam się"/> tak &nbsp
+          <input type="radio" name="answer13" value="nie odcinam się"/> nie
+        </p>
+      </p>
+       <!-- Pyt14 -->
+       <p><b>14. Czy spotkaniom towarzyskim, na które uczęszczasz, towarzyszy muzyka? </b> 
+        <p>
+          <input type="radio" name="answer14" value="tak, nie zwracamy uwagi"/> tak ale nie zwracamy na to zbytnio uwagi &nbsp
+          <input type="radio" name="answer14" value="tak, stanowi główne tło"/> tak, stanowi ona główne tło &nbsp
+          <input type="radio" name="answer14" value="nie"/> nie
+        </p>
+      </p>
+      <!-- Pyt15 -->
+      <p><b>15. Jaki jest Twój preferowany sposób słuchania muzyki?</b>  
+        <p><select name="answer15" >
+           <option value="płyty winylowe">płyty winylowe</option>
+           <option value="CD">płyty CD</option>
+           <option value="radio">radio</option>
+           <option value="platfromy streamingowe">platformy streamingowe</option>
+           <option value="radio internetowe">radio internetowe</option>
+           <option value="inne">inne</option>
+           </select>
+        </p>
+      </p>
+      <!-- Pyt16 -->
+      <p><b>16. Czy korzystasz z platformy streamingowej dpo słuchania muzyki? Jeśli tak, to z jakiej?</b>   
+        <p><select name="answer16" >
+           <option value="nie korzystam z platformy streamingowej">nie korzystam z żadnej platformy streamingowej</option>
+           <option value="Spotify">Spotify</option>
+           <option value="Tidal">Tidal</option>
+           <option value="Apple Music">Apple Music</option>
+           <option value="inne">inne</option>  <!-- TODO podaj jaką-->
+           </select>
+        </p>
+      </p>
+      <!-- Pyt17 -->
+      <p><b>17. Czy korzystasz z radia internetowego? Jeśli tak, to z jakiej stacji? - pytanie dot. mieszkańców Polski</b>
+        <p><select name="answer17" >
+           <option value="Nie korzystam z radia internetowego">Nie korzystam z radia internetowego</option>
+           <option value="RMF FM">RMF FM</option>
+           <option value="Radio Nowy Świat">Radio Nowy Świat</option>
+           <option value="Radio 357">Radio 357</option>
+           <option value="Radio ZET">Radio ZET</option>
+           <option value="Radio ESKA">Radio ESKA</option>
+           <option value="Antyradio">Antyradio</option>
+           <option value="Radio Złote Przeboje">Radio Złote Przeboje</option>
+           <option value="Jedynka Polskie Radio">Jedynka Polskie Radio</option>
+           <option value="Program Trzeci Polskiego Radia">Program Trzeci Polskiego Radia</option>
+           <option value="Radio Gdańsk">Radio Gdańsk</option>
+           <option value="Radio Kaszëbë">Radio Kaszëbë</option>
+           <option value="Inna">Inna</option><!-- TODO podaj jaką-->
+           </select>
+        </p>
+      </p>
+       <!-- Pyt18 -->
+       <p><b>18. Czy korzystasz z radia FM? Jeśli tak to z jakiej stacji? - pytanie dot. mieszkańców Polski</b>
+        <p><select name="answer17" >
+          <option value="Nie korzystam z radia FM">Nie korzystam z radia FM</option>
+           <option value="RMF FM">RMF FM</option>
+           <option value="Radio ZET">Radio ZET</option>
+           <option value="Jedynka Polskie Radio">Jedynka Polskie Radio</option>
+           <option value="Program Trzeci Polskiego Radia">Program Trzeci Polskiego Radia</option>
+           <option value="Antyradio">Antyradio</option>
+           <option value="Radio ESKA">Radio ESKA</option>
+           <option value="Radio Złote Przeboje">Radio Złote Przeboje</option>
+           <option value="Radio Gdańsk">Radio Gdańsk</option>
+           <option value="Radio Kaszëbë">Radio Kaszëbë</option>
+           <option value="Inna">Inna</option><!-- TODO podaj jaką-->
+           </select>
+        </p>
+      </p>
+      <!-- Pyt19 -->
+      <p><b>19. Czy uważasz, że audycje radiowe przeplatane muzyką są atrakcyjne?  </b>
+        <p>
+          <input type="radio" name="answer19" value="tak, są atrakcyjne"/> tak &nbsp  
+          <input type="radio" name="answer19" value="nie są dla mnie atrakcyjne"/> nie &nbsp
+          <input type="radio" name="answer19" value="nie mam zdania"/> nie mam zdania 
+        </p>
+      </p>
+      <!-- Pyt20 -->
+      <p><b>20. Czy audycje poświęcone tylko muzyce są dla Ciebie atrakcyjne?</b>  
+        <p>
+          <input type="radio" name="answer20" value="tak, są atrkacyjne"/> tak &nbsp
+          <input type="radio" name="answer20" value="nie są dla mnie atrakcyjne"/> nie &nbsp
+          <input type="radio" name="answer20" value="nie mam zdania"/> nie mam zdania 
+        </p>
+      </p>
+      <!-- Pyt21 -->
+      <p><b>21. W jaki sposób wybierasz odtwarzane utwory?</b>
+        <p><select name="answer21" >
+          <option value="proponowana playlista">proponowana playlista</option>
+           <option value="własna playlista">własna playlista</option>
+           <option value="listy przebojów">listy przebojów</option>
+           <option value="rekomendacje od znajomych">rekomendacje od znajomych</option>
+           <option value="ze względu na wykonawcę">ze względu na wykonawcę</option>
+           <option value="ze względu na album">ze względu na album</option>
+           <option value="ze względu na rodzaj muzyki">ze względu na rodzaj muzyki</option>
+           <option value="Inna">Inna</option><!-- TODO podaj jaką-->
+           </select>
+        </p>
+      </p>
+      <!-- Pyt22 -->
+      <p><b>22. Jaki jest stopień dopasowania playlist proponowanych do twojego gustu muzycznego? </b>
+        <p><input type="radio" name="answer22" value="Idealny"/> Idealny </p>
+        <p><input type="radio" name="answer22" value="Duży"/> Duży </p> 
+        <p><input type="radio" name="answer22" value="Średni"/> Średni </p>
+        <p><input type="radio" name="answer22" value="Mały"/> Mały</p>
+        <p><input type="radio" name="answer22" value="Praktycznie żaden"/> Praktycznie żaden</p>
+      </p>
+      <!-- Pyt23 -->
+      <p><b>23. Czy playlisty słuchasz w całości, czy też pomijasz niektóre utwory? </b>
+        <p><input type="radio" name="answer23" value="Słucham w całości"/> Słucham w całości </p> 
+        <p><input type="radio" name="answer23" value="Pomijam niektóre utwory"/> Pomijam niektóre utwory</p>  
+        <p><input type="radio" name="answer23" value="Nie słucham playlist"/> Nie słucham playlist </p>
+      </p>
+        <!-- Zapisz odp -->
+        <p><input type = "submit" value = "Submit" /></p>  
+        
+      </form>
+    </div> 
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    
+  </body>
+</html>
+
