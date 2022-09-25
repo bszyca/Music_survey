@@ -9,7 +9,8 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'music_survey'
 
- 
+lang = "PL"
+
 mysql = MySQL(app)
 
 questions = [
@@ -32,7 +33,7 @@ questions = [
   "17. Czy korzystasz z radia internetowego? Jeśli tak to z jakiej stacji? - pytanie dot. mieszkańców Polski",
   "18. Czy korzystasz z radia FM? Jeśli tak to z jakiej stacji? - pytanie dot. mieszkańców Polski",
   "19. Czy uważasz, że audycje radiowe przeplatane muzyką są atrakcyjne?",
-  "20. Czy audycje poświęcone tylko muzyce są dla Ciebie atrakcyjne?", 
+  "20. Czy audycje poświęcone tylko muzyce są dla Ciebie atrakcyjne?",
   "21. W jaki sposób wybierasz odtwarzane utwory?",
   "22. Jaki jest stopień dopasowania playlist proponowanych do twojego gustu muzycznego?", 
   "23. Czy playlisty słuchasz w całości, czy też pomijasz niektóre utwory?"
@@ -97,8 +98,33 @@ def save():
             cursor.execute(sql_query, params_tuple)
             mysql.connection.commit()
             cursor.close()
-      return f"Done!!"
+      if lang == "ENG":
+            return render_template('thx.html')
+      else:
+            return render_template('dzieki.html')
  
+@app.route('/eng')
+def eng():
+      lang = "ENG"
+      return render_template('eng.html')
+
+@app.route('/onas')
+def onas():
+    return render_template('onas.html')
+
+@app.route('/about')
+def about():
+      lang = "ENG"
+      return render_template('about.html')
+
+@app.route('/dzieki')
+def dzieki():
+    return render_template('dzieki.html')
+
+@app.route('/thx')
+def thx():
+    return render_template('thx.html')
+
 def return_max_id_value_if_none(maxid):
       newlist = list(maxid)
       newlist[0] = -1
