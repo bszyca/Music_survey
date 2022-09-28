@@ -27,8 +27,10 @@
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="/onas">O projekcie</a>
-              <a class="nav-item nav-link" href="/eng">English</a>
             </div>
+          <div class="prawo">
+            <a class="nav-item nav-link" href="/eng">English</a>
+          </div>  
           </div>
         </div>
       </nav>
@@ -37,19 +39,19 @@
     <div class="center">
       <form action="/save" method = "POST">
          <!-- Pyt1 -->
-			<p class="pyt" style="margin-top: 20px;"><b>1. Płeć:</b>
+			<p class="pyt" style="margin-top: 20px;"><b>1. Płeć: <span class="star">*</span> </b>
         <div class="odp">
 				<p>
-				  <label class="pointer"><input type="radio" name="answer1" value="kobieta"/> Kobieta &nbsp </label> 
+				  <label class="pointer"><input type="radio" name="answer1" required value="kobieta"/> Kobieta &nbsp </label> 
 				  <label class="pointer"><input type="radio" name="answer1" value="mezczyzna"/> Mężczyzna &nbsp  </label>
           <label class="pointer"><input type="radio" name="answer1" value="NOT"/> Nie chcę podawać  </label>
 				</p>
         </div>
 			  </p>
         <!-- Pyt2 -->
-        <p class="pyt"><b>2. Wiek:</b>
+        <p class="pyt"><b>2. Wiek: <span class="star">*</span> </b>
           <div class="odp">
-            <div><label class="pointer"><p><input type="radio" name="answer2" value="mniej niz 15"/> Poniżej 15 lat</p> </label> </div>
+            <div><label class="pointer"><p><input type="radio" name="answer2" required value="mniej niz 15"/> Poniżej 15 lat</p> </label> </div>
             <div><label class="pointer"><p><input type="radio" name="answer2" value="15-20"/> 15-20 lat</p>  </label> </div>
             <div><label class="pointer"><p><input type="radio" name="answer2" value="20-30"/> 21-30 lat</p> </label></div>
             <div><label class="pointer"><p><input type="radio" name="answer2" value="30-40"/> 31-40 lat</p>   </label></div>
@@ -58,10 +60,10 @@
           </div>
         </p>
         <!-- Pyt3 -->
-        <p class="pyt"><b>3. Wykształcenie:</b>
+        <p class="pyt"><b>3. Wykształcenie: <span class="star">*</span> </b>
           <div class="odp">
           <p>
-            <label class="pointer"><input type="radio" name="answer3" value="podstawowe"/> Podstawowe &nbsp </label>
+            <label class="pointer"><input type="radio" name="answer3" required value="podstawowe"/> Podstawowe &nbsp </label>
             <label class="pointer"><input type="radio" name="answer3" value="srednie"/> Średnie &nbsp </label>
             <label class="pointer"><input type="radio" name="answer3" value="zawodowe"/> Zawodowe &nbsp</label>
             <label class="pointer"><input type="radio" name="answer3" value="wyzsze"/> Wyższe</label>
@@ -69,9 +71,9 @@
           </div>
         </p>
         <!-- Pyt4 -->
-        <p class="pyt"><b>4. Wybierz stwierdzenie, które najlepiej Cię opisuje:</b> 
+        <p class="pyt"><b>4. Wybierz stwierdzenie, które najlepiej Cię opisuje: <span class="star">*</span> </b> 
         <div class="odp">
-          <div style="padding:0;"><label class="pointer"><p><input type="radio" name="answer4" value="ucze sie"/> Uczę się.</p></label></div>
+          <div style="padding:0;"><label class="pointer"><p><input type="radio" name="answer4" required value="ucze sie"/> Uczę się.</p></label></div>
           <div style="padding:0;"><label class="pointer"> <p><input type="radio" name="answer4" value="studiuje || studiuje"/> Studiuję lub/i pracuję. </p>  </label></div>
           <div style="padding:0;"><label class="pointer"><p><input type="radio" name="answer4" value="jestem emerytem"/> Jestem emerytem.</p> </label></div>
           <div style="padding:0; margin-bottom: 0%;"><label class="pointer"><p style="padding:0; margin-bottom: 0%;"><input type="radio" name="answer4" value="jestem bezrobotny"/> Jestem bezrobotny.</p></label></div>
@@ -80,6 +82,7 @@
         <!-- Pyt5 -->
         <p class="pyt" style="margin-bottom: 5px;"><label for=""><b>5. Wybierz stwierdzenie, które najlepiej Cię opisuje:</b></label><br>
           <div class="odp2">
+            <div style="padding: 5px 0"><label class="pointer"><input type="checkbox" name="answer5" value='nie wybrano odp' checked>&nbspNie wybrano odpowiedzi.<br></label></div>
             <div style="padding: 5px 0"><label class="pointer"><input type="checkbox" name="answer5" value='zajmuję się tworzeniem muzyki'>&nbspZajmuję się tworzeniem muzyki.<br></label></div>
             <div style="padding: 5px 0"><label class="pointer"><input type="checkbox" name="answer5" value='obrabiam dźwięk'>&nbspObrabiam dźwięk.<br></label></div>
             <div style="padding: 5px 0"><label class="pointer"><input type="checkbox" name="answer5" value='prowadzę prace badawcze związane z dźwiękiem'>&nbspProwadzę prace badawcze związane z dźwiękiem.<br></label></div>
@@ -87,9 +90,10 @@
           </div>
         </p>
         <!-- Pyt6 -->
-        <p class="pyt" style="padding-top: 0;"><b>6. Kraj pochodzenia:</b> 
+        <p class="pyt" style="padding-top: 0;"><b>6. Kraj pochodzenia: <span class="star">*</span> </b> 
           <p>
-            <select name="answer6">
+            <select name="answer6" required>
+              <option value="" disabled selected>Wybierz spośród opcji</option>
               <option value="Polska">Polska</option>
               <option value="Arabia Saudyjska">Arabia Saudyjska</option>
               <option value="Argentyna">Argentyna</option>
@@ -170,9 +174,9 @@
           </p>
         </p>
         <!-- Pyt7 -->
-        <p class="pyt" style="padding-top: 0px;"><b>7. Wielkość miejsca zamieszkania:</b>
+        <p class="pyt" style="padding-top: 0px;"><b>7. Wielkość miejsca zamieszkania: <span class="star">*</span> </b>
           <div class="odp"> 
-            <div><label class="pointer"><p><input type="radio" name="answer7" value="ponizej 1 tys."/> Poniżej 1 tys. mieszkańców  </p></label></div>
+            <div><label class="pointer"><p><input type="radio" name="answer7" required value="ponizej 1 tys."/> Poniżej 1 tys. mieszkańców  </p></label></div>
             <div><label class="pointer"><p><input type="radio" name="answer7" value="1-20 tys."/> 1-20 tys. mieszkańców  </p></label></div>
             <div><label class="pointer"><p><input type="radio" name="answer7" value="20-100tys."/> 20-100 tys. mieszkańców </p></label></div>
             <div><label class="pointer"><p><input type="radio" name="answer7" value="powyzej 100tys."/> Powyżej 100 tys. mieszkańców </p></label></div>
@@ -182,21 +186,22 @@
     <!-- ANKIETA pyt. szczegolowe -->
     <div class="center">
         <!-- Pyt8 -->
-        <p class="pyt" style="margin-top: 20px;"><b>8. Czy Twój nastrój wpływa na wybór słuchanych utworów?</b>
+        <p class="pyt" style="margin-top: 20px;"><b>8. Czy Twój nastrój wpływa na wybór słuchanych utworów? <span class="star">*</span> </b>
           <div class="odp">
           <p>
-            <div style="line-height: 170%;"><label class="pointer"><input type="radio" name="answer8" value="tak, wpływa"/> Tak &nbsp </label></div>
+            <div style="line-height: 170%;"><label class="pointer"><input type="radio" name="answer8" required value="tak, wpływa"/> Tak &nbsp </label></div>
             <div style="line-height: 170%;"><label class="pointer" style="padding:0; margin-bottom: 0%;"><input type="radio" name="answer8" value="nie wpływa"/> Nie </label></div>
           </p>
           </div>
         </p>
         <!-- Pyt9 -->
-        <p class="pyt"><b>9. Czy grasz na jakimś instrumencie? Jeśli tak, to jakim?</b> 
-          <p><input class = "odp9" type = "text" name = "answer9" placeholder=" Nie / Tak, gram na...[wymień]"/></p>
+        <p class="pyt"><b>9. Czy grasz na jakimś instrumencie? Jeśli tak, to jakim? <span class="star">*</span> </b> 
+          <p><input class = "odp9" type = "text" name = "answer9" required placeholder=" Nie / Tak, gram na...[wymień]"/></p>
         </p>
         <!-- Pyt10 -->
-        <p class="pyt" style="padding-top: 10px;"><b>10. Jakiego gatunku muzycznego najczęściej słuchasz?</b>  
-          <p><select name="answer10">
+        <p class="pyt" style="padding-top: 10px;"><b>10. Jakiego gatunku muzycznego najczęściej słuchasz? <span class="star">*</span> </b>  
+          <p><select name="answer10" required>
+              <option value="" disabled selected>Wybierz spośród opcji</option>
               <option value="Disco polo">Disco polo</option>
               <option value="Folk">Folk</option>
               <option value="Hip Hop/Rap">Hip-hop/Rap</option>
@@ -214,9 +219,9 @@
           </p>
         </p>
       <!-- Pyt11 -->
-      <p class="pyt" style="padding-top: 10px;"><b>11. Ile czasu dziennie słuchasz muzyki w sposób aktywny (słuchanie jest dominującą czynnością, na której się skupiasz, a nie tłem)?</b>
+      <p class="pyt" style="padding-top: 10px;"><b>11. Ile czasu dziennie słuchasz muzyki w sposób aktywny (słuchanie jest dominującą czynnością, na której się skupiasz, a nie tłem)? <span class="star">*</span> </b>
         <div class="odp">
-          <div><label class="pointer"><p><input type="radio" name="answer11" value="mniej niż 30 min"/> Mniej niż 30 min </p></label></div>
+          <div><label class="pointer"><p><input type="radio" name="answer11" required value="mniej niż 30 min"/> Mniej niż 30 min </p></label></div>
           <div><label class="pointer"><p><input type="radio" name="answer11" value="między 0,5 - 1 godziny"/>  0,5 - 1 godziny </p></label></div>
           <div><label class="pointer"><p><input type="radio" name="answer11" value="między 1 - 2 godziny"/>  1 - 2 godziny </p></label></div>
           <div><label class="pointer"><p><input type="radio" name="answer11" value="między 2 - 3 godziny"/>  2 - 3 godziny </p></label></div>
@@ -224,9 +229,9 @@
         </div>
       </p>
       <!-- Pyt12 -->
-      <p class="pyt"><b>12. Jak długo w ciągu dnia słuchasz muzyki w pasywny (muzyka jest tłem podczas wykonywania innych czynności)?</b> 
+      <p class="pyt"><b>12. Jak długo w ciągu dnia słuchasz muzyki w pasywny (muzyka jest tłem podczas wykonywania innych czynności)? <span class="star">*</span> </b> 
         <div class="odp">
-          <div><label class="pointer"><p><input type="radio" name="answer12" value="mniej niż 30 min"/> Mniej niż 30 min </p></label></div>
+          <div><label class="pointer"><p><input type="radio" name="answer12" required value="mniej niż 30 min"/> Mniej niż 30 min </p></label></div>
           <div><label class="pointer"><p><input type="radio" name="answer12" value="między 0,5 - 1 godziny"/>  0,5 - 1 godziny </p></label></div>
           <div><label class="pointer"><p><input type="radio" name="answer12" value="między 1 - 2 godziny"/>  1 - 2 godziny </p></label></div>
           <div><label class="pointer"><p><input type="radio" name="answer12" value="między 2 - 3 godziny"/>  2 - 3 godziny </p></label></div>
@@ -234,30 +239,31 @@
         </div>
       </p>
       <!-- Pyt13 -->
-      <p class="pyt"><b>13. Czy zdarza Ci się słuchać muzyki w celu odcięcia się od otoczenia?</b>
+      <p class="pyt"><b>13. Czy zdarza Ci się słuchać muzyki w celu odcięcia się od otoczenia? <span class="star">*</span> </b>
         <div class="odp">
         <p>
-          <div style="line-height: 170%;"><label class="pointer"><input type="radio" name="answer13" value="tak, odcinam się"/> Tak &nbsp</label></div>
+          <div style="line-height: 170%;"><label class="pointer"><input type="radio" name="answer13" required value="tak, odcinam się"/> Tak &nbsp</label></div>
           <div style="line-height: 170%;"><label class="pointer" style="padding:0; margin-bottom: 0%;"><input type="radio" name="answer13" value="nie odcinam się"/> Nie </label></div>
         </p>
         </div>
       </p>
        <!-- Pyt14 -->
-       <p class="pyt"><b>14. Czy spotkaniom towarzyskim, na które uczęszczasz, towarzyszy muzyka?</b> 
+       <p class="pyt"><b>14. Czy spotkaniom towarzyskim, na które uczęszczasz, towarzyszy muzyka? <span class="star">*</span> </b> 
         <div class="odp">
         <p>
-          <div style="line-height: 170%;"><label class="pointer"><input type="radio" name="answer14" value="tak, towarzyszy"/> Tak &nbsp</label></div>
+          <div style="line-height: 170%;"><label class="pointer"><input type="radio" name="answer14" required value="tak, towarzyszy"/> Tak &nbsp</label></div>
           <div style="line-height: 170%;"><label class="pointer"><input type="radio" name="answer14" value="tak, stanowi główne tło"/> Tak, jednak stanowi ona główne tło &nbsp</label></div>
           <div style="line-height: 170%;"><label class="pointer" style="padding:0; margin-bottom: 0%;"><input type="radio" name="answer14" value="nie towarzyszy"/> Nie </label></div>
         </p>
         </div>
       </p>
       <!-- Pyt15 -->
-      <p class="pyt"><b>15. Jaki sposób słuchania muzyki preferujesz?</b>  
-        <p><select name="answer15">
-            <option value="platfromy streamingowe">Platformy streamingowe</option>
-            <option value="CD">Płyty CD</option>
-            <option value="płyty winylowe">Płyty winylowe</option>
+      <p class="pyt"><b>15. Jaki sposób słuchania muzyki preferujesz? <span class="star">*</span> </b>  
+        <p><select name="answer15" required>
+           <option value="" disabled selected>Wybierz spośród opcji</option>
+           <option value="platfromy streamingowe">Platformy streamingowe</option>
+           <option value="CD">Płyty CD</option>
+           <option value="płyty winylowe">Płyty winylowe</option>
            <option value="radio">Radio FM</option>
            <option value="radio internetowe">Radio internetowe</option>
            <option value="inne">Inne</option>
@@ -265,8 +271,9 @@
         </p>
       </p>
       <!-- Pyt16 -->
-      <p class="pyt" style="padding-top: 10px;"><b>16. Czy korzystasz z platformy streamingowej do słuchania muzyki? Jeśli tak, to z jakiej?</b>   
-        <p><select name="answer16">
+      <p class="pyt" style="padding-top: 10px;"><b>16. Czy korzystasz z platformy streamingowej do słuchania muzyki? Jeśli tak, to z jakiej? <span class="star">*</span> </b>   
+        <p><select name="answer16" required>
+           <option value="" disabled selected>Wybierz spośród opcji</option>
            <option value="nie korzystam z platformy streamingowej">Nie korzystam z żadnej platformy streamingowej</option>
            <option value="Apple Music">Apple Music</option>
            <option value="Spotify">Spotify</option>
@@ -277,8 +284,9 @@
         </p>
       </p>
       <!-- Pyt17 -->
-      <p class="pyt" style="padding-top: 10px;"><b>17. Czy korzystasz z radia internetowego? Jeśli tak, to z jakiej stacji?</b>
-        <p><select name="answer17">
+      <p class="pyt" style="padding-top: 10px;"><b>17. Czy korzystasz z radia internetowego? Jeśli tak, to z jakiej stacji? <span class="star">*</span> </b>
+        <p><select name="answer17" required>
+            <option value="" disabled selected>Wybierz spośród opcji</option>
             <option value="Nie korzystam z radia FM">Nie korzystam z radia internetowego?</option>
             <option value="Antyradio">Antyradio</option>
             <option value="Jedynka Polskie Radio">Jedynka Polskie Radio</option>
@@ -296,8 +304,9 @@
         </p>
       </p>
        <!-- Pyt18 -->
-       <p class="pyt" style="padding-top: 10px;"><b>18. Czy korzystasz z radia FM? Jeśli tak, to z jakiej stacji?</b>
-        <p><select name="answer18">
+       <p class="pyt" style="padding-top: 10px;"><b>18. Czy korzystasz z radia FM? Jeśli tak, to z jakiej stacji? <span class="star">*</span> </b>
+        <p><select name="answer18" required>
+            <option value="" disabled selected>Wybierz spośród opcji</option>
             <option value="Nie korzystam z radia FM">Nie korzystam z radia FM</option>
             <option value="Antyradio">Antyradio</option>
             <option value="Jedynka Polskie Radio">Jedynka Polskie Radio</option>
@@ -313,29 +322,30 @@
         </p>
       </p>
       <!-- Pyt19 -->
-      <p class="pyt" style="padding-top: 10px;"><b>19. Czy uważasz, że audycje radiowe przeplatane muzyką są atrakcyjne?  </b>
+      <p class="pyt" style="padding-top: 10px;"><b>19. Czy uważasz, że audycje radiowe przeplatane muzyką są atrakcyjne? <span class="star">*</span> </b>
         <div class="odp">
         <p>
-          <div style="line-height: 170%;"><label class="pointer"><input type="radio" name="answer19" value="tak, są atrakcyjne"/> Tak &nbsp </label></div>
+          <div style="line-height: 170%;"><label class="pointer"><input type="radio" name="answer19" required value="tak, są atrakcyjne"/> Tak &nbsp </label></div>
           <div style="line-height: 170%;"><label class="pointer"><input type="radio" name="answer19" value="nie są dla mnie atrakcyjne"/> Nie &nbsp </label></div>
           <div style="line-height: 170%;"><label class="pointer" style="padding:0; margin-bottom: 0%;"><input type="radio" name="answer19" value="nie mam zdania"/> Nie mam zdania </label></div>
         </p>
         </div>
       </p>
       <!-- Pyt20 -->
-      <p class="pyt"><b>20. Czy audycje poświęcone tylko muzyce są dla Ciebie atrakcyjne?</b>  
+      <p class="pyt"><b>20. Czy audycje poświęcone tylko muzyce są dla Ciebie atrakcyjne? <span class="star">*</span> </b>  
         <div class="odp">
         <p>
-          <div style="line-height: 170%;"><label class="pointer"><input type="radio" name="answer20" value="tak, są atrkacyjne"/> Tak &nbsp</label></div>
+          <div style="line-height: 170%;"><label class="pointer"><input type="radio" name="answer20" required value="tak, są atrkacyjne"/> Tak &nbsp</label></div>
           <div style="line-height: 170%;"><label class="pointer"><input type="radio" name="answer20" value="nie są dla mnie atrakcyjne"/> Nie &nbsp</label></div>
           <div style="line-height: 170%;"><label class="pointer" style="padding:0; margin-bottom: 0%;"><input type="radio" name="answer20" value="nie mam zdania"/> Nie mam zdania </label></div>
         </p>
         </div>
       </p>
       <!-- Pyt21 -->
-      <p class="pyt"><b>21. W jaki sposób wybierasz odtwarzane utwory?</b>
-        <p><select name="answer21">
-          <option value="proponowana playlista">Proponowana playlista</option>
+      <p class="pyt"><b>21. W jaki sposób wybierasz odtwarzane utwory? <span class="star">*</span> </b>
+        <p><select name="answer21" required>
+           <option value="" disabled selected>Wybierz spośród opcji</option>
+           <option value="proponowana playlista">Proponowana playlista</option>
            <option value="własna playlista">Własna playlista</option>
            <option value="listy przebojów">Listy przebojów</option>
            <option value="rekomendacje od znajomych">Rekomendacje od znajomych</option>
@@ -347,9 +357,9 @@
         </p>
       </p>
       <!-- Pyt22 -->
-      <p class="pyt" style="padding-top: 10px;"><b>22. Jaki jest stopień dopasowania proponowanych playlist do Twojego gustu muzycznego?</b>
+      <p class="pyt" style="padding-top: 10px;"><b>22. Jaki jest stopień dopasowania proponowanych playlist do Twojego gustu muzycznego? <span class="star">*</span> </b>
         <div class="odp">
-          <div><label class="pointer"><p><input type="radio" name="answer22" value="Idealny"/> Idealny </p></label></div>
+          <div><label class="pointer"><p><input type="radio" name="answer22" required value="Idealny"/> Idealny </p></label></div>
           <div><label class="pointer"><p><input type="radio" name="answer22" value="Duży"/> Duży </p></label></div>
           <div><label class="pointer"><p><input type="radio" name="answer22" value="Średni"/> Średni </p></label></div>
           <div><label class="pointer"><p><input type="radio" name="answer22" value="Mały"/> Mały</p></label></div>
@@ -357,23 +367,13 @@
         </div>
       </p>
       <!-- Pyt23 -->
-      <p class="pyt"><b>23. Czy słuchasz playlisty w całości, czy też pomijasz niektóre utwory? </b>
+      <p class="pyt"><b>23. Czy słuchasz playlisty w całości, czy też pomijasz niektóre utwory? <span class="star">*</span> </b>
         <div class="odp">
-          <div><label class="pointer"><p><input type="radio" name="answer23" value="Słucham w całości"/> Słucham w całości. </p></label></div>
+          <div><label class="pointer"><p><input type="radio" name="answer23" required value="Słucham w całości"/> Słucham w całości. </p></label></div>
           <div><label class="pointer"><p><input type="radio" name="answer23" value="Pomijam niektóre utwory"/> Pomijam niektóre utwory. </p> </label></div>
           <div style="padding:0; margin-bottom: 0%;"><label class="pointer"><p style="margin-bottom: 0;"><input type="radio" name="answer23" value="Nie słucham playlist"/> Nie słucham playlist. </p></label></div>
         </div>
       </p>
         <!-- Zapisz odp -->
-        <p><input type = "submit" value = "Prześlij" /></p>  
-
-      </form>
-    </div> 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-  </body>
-</html>
+        <div class="centrum">
+       

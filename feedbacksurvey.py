@@ -9,7 +9,7 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'music_survey'
 
-lang = "PL"
+#global lang = 0
 
 mysql = MySQL(app)
 
@@ -43,6 +43,8 @@ answers_new =[]
 
 @app.route('/')
 def form():
+    global lang
+    lang = 'PL'
     return render_template('main.html')
  
 @app.route('/save', methods = ['GET','POST'])
@@ -98,23 +100,27 @@ def save():
             cursor.execute(sql_query, params_tuple)
             mysql.connection.commit()
             cursor.close()
-      if lang == "ENG":
+      if lang != 'PL':
             return render_template('thx.html')
       else:
             return render_template('dzieki.html')
- 
+
 @app.route('/eng')
 def eng():
-      lang = "ENG"
+      global lang
+      lang = 'ENG'
       return render_template('eng.html')
-
+      
 @app.route('/onas')
 def onas():
+    global lang
+    lang = 0
     return render_template('onas.html')
 
 @app.route('/about')
 def about():
-      lang = "ENG"
+      global lang
+      lang = 1
       return render_template('about.html')
 
 @app.route('/dzieki')

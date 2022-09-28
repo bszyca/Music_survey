@@ -23,8 +23,12 @@ head {
   background: #f2f2f2;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+h1, h2, h3, h4, h5, h6, a {
+  color: #cbd5db;
+}
+
+a:hover {
+  color: #ffffff;
 }
 
 .navbar-brand mr-4 {
@@ -32,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-steel {
-  background-color: #2a3d59;
+  background-color: #071830;
   opacity: 1;
   font-size: 107%; 
 }
@@ -71,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   border: 0;
   color: #fff;
-  background: #006aee;
+  background: #cbd5db;
   cursor: pointer;
 }
 
@@ -81,10 +85,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
   box-sizing: border-box;
   width: 51%;
-  border: 5px solid #304564;
+  border: 5px solid #0d1d35;
   padding: 10px;
   border-radius: 40px;
-  background-color: #f0e0c4;
+  background-color: #f0e6d6ee;
   opacity: 1;
 }
 
@@ -123,15 +127,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 select {
-  background-color: #d5c2a6;
+  background-color: #d4c6b2;
   border-radius: 11px;
-  padding: 5px 0;
-  padding-bottom: 5px;
-  border: 2px;
+  padding: 5px 7px;
+  border: 3px;
   border-color: #a19b85;
   opacity: 1 !important;
   width: 100%; 
-  max-width: 230px;
+  max-width: 310px;
 }
 
 .pyt6 {
@@ -140,19 +143,62 @@ select {
 }
 
 .odp9 {
-  background-color: #d5c2a6;
+  background-color: #d4c6b2;
   border-radius: 11px;
   border: 0px;
   border-color: #88816a;
-  padding: 5px 0;
+  padding: 5px 7px;
   opacity: 1 !important;
-  padding-bottom: 5px;
   width: 100%; 
-  max-width: 230px;
+  max-width: 310px;
 }
 
 .pointer {
   cursor: pointer;
+}
+
+.centrum {
+  text-align: center;
+}
+
+.button {
+  background-color: #bbaf9d;
+  display: inline-block;
+  margin: 0 auto;
+  border-radius: 16px;
+  border: 10 px;
+  border-color: #88816a;
+  color: #000000;
+  padding: 12px 38px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 650;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-box-shadow: 8px 4px 19px -5px #757060;
+  -moz-box-shadow: 8px 4px 19px -5px #757060;
+  box-shadow: 8px 4px 19px -5px #757060;
+}
+ 
+.button:hover {
+  background-color: #88816a;
+  color: #f5efe3;
+}
+
+.prawo {
+  text-align: right;
+  color: #cbd5db;
+  cursor: pointer;
+}
+
+.star {
+  color: #dc3545!important
+}
+
+.star:hover {
+  color: #000000!important;
 }
 
 
@@ -167,10 +213,10 @@ Arkusz stylów dla sekcji ABOUT
   margin-bottom: 60px;
   box-sizing: border-box;
   width: 51%;
-  border: 5px solid #304564;
+  border: 5px solid #0d1d35;
   padding: 10px;
   border-radius: 40px;
-  background-color: #f0e0c4;
+  background-color: #f0e6d6ee;
   opacity: 1;
   display: block;
 }
